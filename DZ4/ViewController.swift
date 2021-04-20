@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         print(translite(word: "морДа"))
         
 //        9
-        print(selection(words: ["lada", "sedan", "baklazhan"]))
+        
     }
     
     
@@ -53,12 +53,12 @@ class ViewController: UIViewController {
         if  fatherName.hasSuffix("ич"){
             print("есть ич")
         }else {
-            print("нет на")
+            print("нет ич")
         }
         if fatherName.hasSuffix("на"){
             print("есть на")
         }else {
-            print("нет  ич")
+            print("нет  на")
         }
     }
     
@@ -166,10 +166,10 @@ class ViewController: UIViewController {
     
     
     //        9
-    func selection(words: [String]){
+    
         
         
-    }
+    
     
 }
 
