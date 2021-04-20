@@ -53,12 +53,12 @@ class ViewController: UIViewController {
         if  fatherName.hasSuffix("ич"){
             print("есть ич")
         }else {
-            print("нет на")
+            print("нет ич")
         }
         if fatherName.hasSuffix("на"){
             print("есть на")
         }else {
-            print("нет  ич")
+            print("нет  на")
         }
     }
     
