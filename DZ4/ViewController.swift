@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         //        9
        print(selector(serch: "da"))
 //        10
-        print(antimat(phrase: "hello my fuck"))
+        print(antimat(phrase:))
         
     }
     
@@ -198,11 +198,6 @@ class ViewController: UIViewController {
 //        10
     func antimat(phrase: String ){
      
-        var newPhrase = ""
-        for char in phrase{
-            
-        }
-        print(newPhrase)
     }
         
     
