@@ -197,7 +197,7 @@ class ViewController: UIViewController {
     
 //        10
     func antimat(phrase: String ){
-     
+     let snt = 0
     }
         
     
