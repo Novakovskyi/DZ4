@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         print(suffix())
         
         //        3
-        print(nameSurname())
+        print(nameSurname(name: "АлексейНоваковский"))
         
         //        4
         print(iReverse(phrase: "ротатор"))
@@ -36,8 +36,11 @@ class ViewController: UIViewController {
         //       8
         print(translite(word: "морДа"))
         
-//        9
-        print(selection(words: ["lada", "sedan", "baklazhan"]))
+        //        9
+       print(selector(serch: "da"))
+//        10
+        print(antimat(phrase: "hello my fuck"))
+        
     }
     
     
@@ -63,16 +66,20 @@ class ViewController: UIViewController {
     }
     
     //      3
-    func nameSurname(){
-        let nameSurname = "АлексейНоваковский"
-        let index = nameSurname.firstIndex(of: "Н") ?? nameSurname.endIndex
-        let str1 = nameSurname[..<index]
-        print(str1)
-        let index2 = nameSurname.firstIndex(of: "Н") ?? nameSurname.endIndex
-        let str2 = nameSurname[index2...]
-        print(str2)
-        let str3 = str1 + " " + str2
-        print(str3)
+    func nameSurname(name: String){
+        for char in name{
+            if char.isUppercase{
+               guard let index = name.lastIndex(where: {$0 == char})
+                else { return }
+                let str1 = name[name.startIndex..<index ]
+                let str2 = name[index..<name.endIndex]
+                let str3 = str1 + " " + str2
+                print(str1)
+                print(str2)
+                print(str3)
+            }
+        }
+        
     }
     
     //        4
@@ -142,6 +149,17 @@ class ViewController: UIViewController {
     func sortedNums(){
         var nums = [1, 2, 2, 4, 8, 3, 1, 13]
         var removeDooble = Array(Set(nums))
+        for _ in 0..<removeDooble.count - 1{
+            for i in 0..<removeDooble.count - 1{
+                if (removeDooble[i] > removeDooble[i + 1]){
+                    let arr = removeDooble[i]
+                    removeDooble[i] = removeDooble[i + 1]
+                    removeDooble[i + 1] = arr
+                    
+                }
+            }
+        }
+        
         print(removeDooble)
     }
     
@@ -166,10 +184,28 @@ class ViewController: UIViewController {
     
     
     //        9
-    func selection(words: [String]){
-        
-        
+    func selector(serch: String){
+        let array = ["lada", "sedan", "baklazhan"]
+        var arrayResult = [String]()
+        for item in array{
+            if item.contains(serch){
+                arrayResult.append(item)
+            }
+        }
+        print(arrayResult)
     }
+    
+//        10
+    func antimat(phrase: String ){
+        let dictionary: [Character:String] = [ "fuck": "***" ]
+        var newPhrase = ""
+        for char in phrase{
+            newPhrase.append(dictionary[char] ?? String(char))
+        }
+        print(newPhrase)
+    }
+        
+    
     
 }
 
