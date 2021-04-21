@@ -197,10 +197,10 @@ class ViewController: UIViewController {
     
 //        10
     func antimat(phrase: String ){
-        let dictionary: [Character:String] = [ "fuck": "***" ]
+     
         var newPhrase = ""
         for char in phrase{
-            newPhrase.append(dictionary[char] ?? String(char))
+            
         }
         print(newPhrase)
     }
