@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         //        9
        print(selector(serch: "da"))
 //        10
-        print(antimat(phrase: "fuck"))
+        print(antimat())
         
     }
     
@@ -196,16 +196,13 @@ class ViewController: UIViewController {
     }
     
 //        10
-    func antimat(phrase: String ){
-     let array = ["hello my fuck"]
-        var arrayResult = [String]()
-        for item in array{
-            if item.contains(phrase){
-                arrayResult.append(item)
-            }
-            
-        }
-     print(arrayResult)
+    func antimat(){
+        let phrase = "hello my "
+     let antimatWord = "fuck"
+        let pattern = Character("a")..."z"
+        let antimat = String(antimatWord.map { pattern ~= $0 ? Character("*") : $0 })
+        
+        print(phrase + antimat)
     }
         
     
