@@ -197,12 +197,11 @@ class ViewController: UIViewController {
     
 //        10
     func antimat(){
-        let phrase = "hello my "
-     let antimatWord = "fuck"
-        let pattern = Character("a")..."z"
-        let antimat = String(antimatWord.map { pattern ~= $0 ? Character("*") : $0 })
+        let phrase = "hello my fuck "
+    
         
-        print(phrase + antimat)
+        let antimat = phrase.replacingOccurrences(of: "fuck", with: "****", options: NSString.CompareOptions.literal, range: nil)
+        print(antimat)
     }
         
     
